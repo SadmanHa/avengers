@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "open sans";
+    background:#fdcb6e ;
+    height: 100vh;
+}
+.card-container {
+    perspective: 1000px;
+    padding-top: 84px;
+    
+}
+.w33-3 {
+    width: 33.33%;
+    padding: 0px 67px;
+    float: left;
+}
+.card {
+    
+    perspective: 1000px;
+    position: relative;
+    height: 500px;
+    /* width: 25%; */
+    color: white;
+    transform-style: preserve-3d;
+    transition: 0.7s;
+}
+.card .card-front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('images/iron-man2.jpg') no-repeat center / cover;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 0.5s;
+}
+.w33-3:nth-child(2) .card-front {
+
+    background: url('images/captain2.jpg') no-repeat center / cover;
+}
+.w33-3:nth-child(3) .card-front {
+
+    background: url('images/thor2.jfif') no-repeat center / cover;
+}
+
+.card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('images/iron-man4.jpg') no-repeat center / cover;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 0.7s;
+    transform: rotateY(-180deg);
+}
+.w33-3:nth-child(2) .card-back {
+
+    background: url('images/captain1.jpg') no-repeat center / cover;
+}
+.w33-3:nth-child(3) .card-back {
+
+    background: url('images/thor1.jpg') no-repeat center / cover;
+}
+.card .card-front:after,.card .card-back:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+}
+ .card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    z-index: 2;
+    text-align: center;
+    top: 68%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: 0.7s;
+}
+.card-img {
+    text-align: center;
+
+}
+ .card-img img {
+    width:58%;
+}
+.card-back  .card-img img {
+    width:50%;
+}
+ .card-heading {
+    font-size: 19px;
+    padding: 7px;
+
+}
+ .card p {
+    font-size: 13px;
+    /* text-align: center; */
+    font-weight: 600;
+    
+}
+.card:hover .card-front {
+    transform: rotateY(180deg)
+}
+.card:hover .card-back {
+    transform: rotateY(0deg)
+}
+.card-front .card-img,.card-front  .card-heading ,.card-front  .card-text {
+    transform: translateZ(40px);
+}
+.card-back .card-img,.card-back  .card-heading ,.card-back  .card-text {
+    transform: translateZ(40px);
+}
